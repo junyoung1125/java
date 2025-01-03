@@ -60,15 +60,27 @@ public class ForTest {
 			}
 		}
 
+		
+		System.out.println("------------------------------");
+		
+		
+		
 		// 별삼각형
-		for (int start = 10; start >= 1; start--) {
+		for (int start = 1; start <= 10; start++) {
+			
 			for (int end = 1; end <= start; end++) {
-
-				System.out.print("★");
-			}
+				System.out.print("★");			
+			}		
+			
 			System.out.print("\n");
 		}
 
+		for (int s = 10; s >= 1; s--) {
+			for (int e = 1; e <= s; e++) {
+				System.out.print("*");
+			}
+			System.out.print("\n");
+		}
 	}
 
 }
