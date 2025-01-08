@@ -61,5 +61,49 @@ public class EncapsuleTest {
 		// 우리은행 -> 유리은행 상호변경
 		ur.setBank("유리은행");
 		ur.show();
+
+		// 도서관 관리 시스템의 일부로 book 클래스 정의
+
+		Book book1 = new Book("삼국지", "나관중", "10001", 10);
+		book1.show();
+
+		boolean isOk = book1.borrowBook();
+
+		if (isOk) {
+			System.out.println("도서 대출 성공");
+		} else {
+			System.out.println("도서 대출 실패");
+		}
+		book1.show();
+
+		Book book2 = new Book("이것이 자바다", "신용권", "10002", 0);
+
+		book2.show();
+
+		if (book2.borrowBook()) {
+			System.out.println(book2.getTitle() + "도서 대출 성공!");
+		} else {
+			System.out.println(book2.getTitle() + "도서 대출 실패!");
+		}
+
+		Movie movie1 = new Movie("해운대", "변준영", 6.5, 10);
+
+		if (movie1.reserveSeat()) {
+			System.out.println("영화 좌석 예매 완료!");
+		} else {
+			System.out.println("영화 좌석 예매 실패!");
+		}
+		movie1.showDetails();
+
+		Movie movie2 = new Movie("타이타닉", "제임스카메론", 9.5, 0);
+
+		if (movie2.reserveSeat()) {
+			System.out.println("영화 좌석 예매 완료!");
+		} else {
+			System.out.println("영화 좌석 예매 실패!");
+		}
+
+		movie2.showDetails();
 	}
+
 }
