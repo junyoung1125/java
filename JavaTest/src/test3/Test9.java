@@ -1,47 +1,42 @@
 package test3;
 
 /*
- * 
- * 날짜: 2025/01/10
- * 이름: 변준영
- * 내용: 추상클래스, 다형성 연습문제
- * 
+ * 날짜 : 2025/01/13
+ * 이름 : 변준영
+ * 내용 : 추상클래스, 다형성 연습문제
  */
-???
-class Shape {
-	public abstarct void draw();
-
+abstract class Shape {
+	public abstract void draw();
 }
 
-class Triangle extends???{
-
-	@override
+class Triangle extends Shape {
+	@Override
 	public void draw() {
 		System.out.println("draw Triangle!");
 	}
+}
 
-	class Circle extends???{
-
-	@override
+class Circle extends Shape {
+	@Override
 	public void draw() {
 		System.out.println("draw Circle!");
-	}
 	}
 }
 
 public class Test9 {
 
 	public static void main(String[] args) {
-		Test09 here = new Test09();
-		
-		Circle circle= new Circle();
-		Triangle triangle= new Triangle();
-		
+
+		Test9 here = new Test9();
+
+		Circle circle = new Circle();
+		Triangle triangle = new Triangle();
+
 		here.draw(circle);
 		here.draw(triangle);
 	}
 
-	public void draw(???obj) {
+	public void draw(Shape obj) {
 		obj.draw();
 	}
 }

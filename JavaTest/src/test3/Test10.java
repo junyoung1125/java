@@ -1,4 +1,5 @@
 package test3;
+
 /*
  * 
  * 날짜: 2025/01/10
@@ -6,36 +7,35 @@ package test3;
  * 내용: 인터페이스 연습문제
  * 
  */
-interface Buyer{
+interface Buyer {
 	public void buy();
 }
 
-interface Seller{
+interface Seller {
 	public void sell();
 }
-class Customers ??? {
-	
-	@override
+
+class Customers implements Buyer, Seller {
+
+	@Override
 	public void sell() {
 		System.out.println("판매하기");
 	}
-	
-	@override
+
+	@Override
 	public void buy() {
 		System.out.println("구매하기");
 	}
 }
 
-
-
 public class Test10 {
 
 	public static void main(String[] args) {
-		Buyer buyer = new ????
-		Seller seller = new ????
-				
+		Buyer buyer = new Customers();
+		Seller seller = new Customers();
+
 		buyer.buy();
-		seller.sell();F   
+		seller.sell();
 	}
-	
+
 }

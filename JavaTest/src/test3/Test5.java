@@ -41,11 +41,11 @@ class CarFactory {
 
 public class Test5 {
 	public static void main(String[] args) {
-		CarFactory factory = new Vehicle(???);
+		CarFactory factory = CarFactory.getInstance();
 
 		Vehicle avante = factory.createCar("아반떼", 2500);
 		Vehicle sonata = factory.createCar("소나타", 3000);
-		
+
 		avante.info();
 		sonata.info();
 	}

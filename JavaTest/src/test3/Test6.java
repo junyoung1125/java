@@ -6,12 +6,13 @@ package test3;
  */
 
 class Adder {
-	private static ?? instance= new Adder();
-	public static ??? getInstance(){
-		return instance;
-	}???
+	private static Adder instance = new Adder();
 
-	Adder() {
+	public static Adder getInstance() {
+		return instance;
+	}
+
+	private Adder() {
 	}
 
 	private Adder(int value) {
@@ -26,16 +27,16 @@ class Adder {
 		y++;
 	}
 
-	public void add(??? arr) {
-		this.x+=arr[0];
-		this.y+=arr[1];
+	public void add(int[] arr) {
+		this.x += arr[0];
+		this.y += arr[1];
 	}
 
-	public static void add(??? a2) {
-		a2.x+=10;
+	public static void add(Adder a2) {
+		a2.x += 10;
 	}
 
-	public static Adder add(??? a3, ??? value) {
+	public static Adder add(Adder a3, int value) {
 		return new Adder(value);
 	}
 
@@ -48,20 +49,20 @@ class Adder {
 
 public class Test6 {
 	public static void main(String[] args) {
-		
-		Adder a1= Adder.???
-				
-		a1.add(1,2);
+
+		Adder a1 = Adder.getInstance();
+
+		a1.add(1, 2);
 		a1.show();
-		
-		int[] arr= {10,20};
+
+		int[] arr = { 10, 20 };
 		a1.add(arr);
 		a1.show();
-		
+
 		Adder.add(a1);
 		a1.show();
-		
-		a1= Adder.add(a1,3);
+
+		a1 = Adder.add(a1, 3);
 		a1.show();
 	}
 }

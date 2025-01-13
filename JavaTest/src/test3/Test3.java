@@ -34,15 +34,15 @@ public class Test3 {
 	public static void main(String[] args) {
 		Car sonata = null;
 		Car bmw = null;
-		
-		sonata= new ???
-		bmw= new ???
-				
-			sonata.drive();
-			sonata.info();
-			
-			bmw.drive();
-			bmw.info();
+
+		sonata = new Car("현대", "소나타", 3000);
+		bmw = new Car("BMW", "520d", 5000);
+
+		sonata.drive();
+		sonata.info();
+
+		bmw.drive();
+		bmw.info();
 	}
 
 }
