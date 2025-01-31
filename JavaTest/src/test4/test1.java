@@ -32,7 +32,11 @@ public class test1 {
 				}
 			} catch (InputMismatchException e) {
 				System.out.println("숫자가 아닙니다. 숫자를 입력하세요.");
+<<<<<<< HEAD
 
+=======
+				continue;
+>>>>>>> 7e56a0ac51b358fd99c3e236981d292c07746dec
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 				continue;

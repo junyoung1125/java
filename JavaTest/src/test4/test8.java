@@ -6,5 +6,5 @@ package test4;
  * 내용: 객체 리스트 연습문제
  */
 public class test8 {
-
+	
 }

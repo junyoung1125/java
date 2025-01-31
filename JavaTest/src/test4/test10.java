@@ -1,4 +1,5 @@
 package test4;
+
 /*
  * 
  * 날짜: 2025/01/17
@@ -6,5 +7,8 @@ package test4;
  * 내용: 자바 파일 입출력 연습문제
  */
 public class test10 {
+	public static void main(String[] args) {
+		System.out.println("안녕");
+	}
 
 }
