@@ -10,6 +10,7 @@ public class Test01 {
 	private String name;
 	private int age;
 
+
 	public Test01(String name, int age) {
 		this.name = name;
 		this.age = age;

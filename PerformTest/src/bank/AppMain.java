@@ -37,56 +37,72 @@ public class AppMain {
 
 	private static void createAccount() {
 
-		Account cA1 = new Account("110-11-1001", "김유신", 10000);
 		System.out.println("----------계좌생성-----------");
-		System.out.println("계좌번호 :" + cA1.getAno());
-		System.out.println("계좌주: " + cA1.getOwner());
-		System.out.println("초기입금액: " + cA1.getBalance());
-		System.out.println("결과: 계좌가 생성되었습니다.");
 
-		Account cA2 = new Account("110-11-1002", "김춘추", 20000);
-		System.out.println("----------계좌생성-----------");
-		System.out.println("계좌번호 :" + cA2.getAno());
-		System.out.println("계좌주: " + cA2.getOwner());
-		System.out.println("초기입금액: " + cA2.getBalance());
+		System.out.print("계좌번호: ");
+		String ano = scanner.nextLine();
+
+		System.out.print("예금주 :");
+		String owner = scanner.nextLine();
+
+		System.out.print("초기 입금액: ");
+		int balance = Integer.parseInt(scanner.nextLine());
+
+		Account newAccount = new Account(ano, owner, balance);
+		accounts.add(newAccount);
 		System.out.println("결과: 계좌가 생성되었습니다.");
 
 	}
 
 	private static void accountList() {
-		Account aL1 = new Account("110-11-1001", "김유신", 10000);
-		Account aL2 = new Account("110-11-1002", "김춘추", 20000);
-		System.out.println("-------계좌목록---------");
-		System.out.print(aL1.getAno());
-		System.out.print(aL1.getOwner());
-		System.out.println(aL1.getBalance());
-		
-		System.out.print(aL2.getAno());
-		System.out.print(aL2.getOwner());
-		System.out.println(aL2.getBalance());
+
+		for (Account ac : accounts) {
+			System.out.println(ac.getAno() + " " + ac.getOwner() + " " + ac.getBalance());
+		}
 	}
 
 	private static void deposit() {
 
-		Account de1 = new Account("110-11-1101", "", 5000);
+		System.out.println("------예금------");
+		System.out.print("계좌번호: ");
+		String ano = scanner.nextLine();
 
-		System.out.println("계좌번호: " + de1.getAno());
-		System.out.println("예금액: " + de1.getBalance());
-		System.out.println("결과: 예금이 성공되었습니다.");
+		System.out.print("예금액: ");
+		int inbalance = Integer.parseInt(scanner.nextLine());
+
+		// 계좌 찾기
+		Account account = findAccount(ano);
+
+		account.setBalance(account.getBalance() + inbalance);
+
+		System.out.print("결과: 예금이 성공되었습니다.");
 	}
 
 	private static void withdraw() {
 
-		Account wd1 = new Account("110-11-1002", "", 3000);
-		System.out.println("--------출금--------");
-		System.out.println("계좌번호 :" + wd1.getAno());
-		System.out.println("출금액:" + wd1.getBalance());
-		System.out.println("결과: 출금이 성공되었습니다.");
+		System.out.println("-------출금-------");
+		System.out.print("계좌번호 :");
+		String ano = scanner.nextLine();
+
+		System.out.print("출금액: ");
+		int inbalance = Integer.parseInt(scanner.nextLine());
+
+		// 계좌찾기
+		Account account = findAccount(ano);
+
+		account.setBalance(account.getBalance() - inbalance);
+
+		System.out.print("결과: 출금이 성공되었습니다.");
+
 	}
 
-	private static Account findAccount(String ano) {
-		Account fA1 = new Account("110-11-1101", "김유신", 15000);
-		Account fA2 = new Account("110-11-1002", "김춘추", 17000);
-		return fA2;
+	public static Account findAccount(String ano) {
+		for (Account account : accounts) {
+			// 계좌번호가 일치하는 계좌찾기
+			if (account.getAno().equals(ano))
+				return account; // 일치하는 계좌반환
+		}
+		return null;
 	}
+
 }

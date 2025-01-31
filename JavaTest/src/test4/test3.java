@@ -5,6 +5,8 @@ package test4;
  * 이름: 변준영
  * 내용: 자바 예외처리 연습문제
  */
+
+
 public class test3 {
 
 }
